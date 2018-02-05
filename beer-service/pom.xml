@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>beer-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <parent>
+        <groupId>cn.kevinz</groupId>
+        <artifactId>contracts</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <name>Beer Service Contracts and Stubs</name>
+    <description>POM used to install locally stubs and contracts</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <version>${spring-cloud-contract.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- By default it would search under src/test/resources/ -->
+                    <contractsDirectory>
+                        ${project.basedir}/src/main/resources/cn/kevinz/beer-service/contracts
+                    </contractsDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
