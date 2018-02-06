@@ -11,8 +11,7 @@
     <parent>
         <groupId>cn.kevinz</groupId>
         <artifactId>contracts</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>..</relativePath>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <name>Beer Service Contracts and Stubs</name>
@@ -44,7 +43,7 @@
             <plugin>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-                <version>${spring-cloud-contract.version}</version>
+                <version>1.2.1.RELEASE</version>
                 <extensions>true</extensions>
                 <configuration>
                     <!-- By default it would search under src/test/resources/ -->
