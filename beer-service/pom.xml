@@ -21,6 +21,27 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>contracts</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <attach>true</attach>
+                            <descriptors>
+                                <descriptor>${basedir}/assembly.xml</descriptor>
+                            </descriptors>
+                            <!-- If you want an explicit classifier remove the following line -->
+                            <appendAssemblyId>false</appendAssemblyId>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
                 <version>${spring-cloud-contract.version}</version>
