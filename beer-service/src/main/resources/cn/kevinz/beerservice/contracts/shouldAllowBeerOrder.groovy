@@ -1,4 +1,4 @@
-package contracts
+package cn.kevinz.beerservice.contracts
 
 import org.springframework.cloud.contract.spec.Contract
 
@@ -8,11 +8,11 @@ Contract.make {
         url '/beer'
         body("""
     {
-      "id":"123456",
-      "age":15,
-      "name":"Greenberg",
+      "id":"123457",
+      "age":21,
+      "name":"Kevinz",
       "amount":1,
-      "desire":3
+      "desire":2
     }
     """)
         headers {
@@ -22,9 +22,8 @@ Contract.make {
     response {
         status 200
         body([
-                checkedStatus : "NOT_OK",
-                "orderStatus" : false,
-                "rejectReason": "Too young to get beer"
+                checkedStatus: "OK",
+                "orderStatus": true
         ])
         headers {
             contentType('application/json')
